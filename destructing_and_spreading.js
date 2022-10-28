@@ -11,7 +11,7 @@ let [
     firstPerson = 'Prashant',
     secondPerson,
     thirdPerson,
-    fourthPerson = "Devid"
+    fourthPerson = 'Devid'
 ] = names
 
 
