@@ -1,7 +1,3 @@
-for(const [country,city] of countries){
-//     console.log(country,city)
-// }
-
-// for(const [first,second, third] of fullStack){
-//     console.log(first,second,third)
+for(const {name, scores, skills, age} of users){
+//     console.log(name, scores, skills, age);
 // }
