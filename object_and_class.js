@@ -141,20 +141,22 @@ const animal5 = new Animal('Monkey', 5, 'Yellow', 4);
 console.log(animal1.getAnimalInfo());
 
 class Dog extends Animal {
-    constructor(name, age, color, legs, owner){
+    constructor(name, age, color, legs, owner, certified){
         super(name, age, color, legs);
         this.owner = owner
+        this.certified = certified
     }
 
     getDogInfo(){
-        let info = `The ${this.name} has ${this.legs} legs and its color is ${this.color} and its owner is ${this.owner}`;
+        let info = `The ${this.name} has ${this.legs} legs and its color is ${this.color} and its owner is ${this.owner} and its certified is ${this.certified}`;
         return info;
     }
 
 
 }
 
-const dog1 = new Dog('Barito', 5, 'Brown', 4, 'Prashant');
-const dog2 = new Dog('Tiger', 5, 'Yellow', 4, 'Prashant');
+const dog1 = new Dog('Barito', 5, 'Brown', 4, 'Prashant',true);
+const dog2 = new Dog('Tiger', 5, 'Yellow', 4, 'Prashant',false);
 
 console.log(dog1.getDogInfo());
+
