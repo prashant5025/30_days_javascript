@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="stroage"></div>
+
+    <script>
+
+        const skills = [
+            {name: 'HTML', level: 10},
+            {name: 'CSS', level: 10},
+            {name: 'JS', level: 10},
+            {name: 'React', level: 10},
+            {name: 'Node', level: 10},
+            {name: 'MongoDB', level: 10},
+        ]
+
+        const skillsJSON = JSON.stringify(skills, undefined, 4);
+        let skillsJson = JSON.stringify(skills,);
+        localStorage.setItem('skills', skillsJSON);
+
+        const user = {
+            firstName: "Prashant",
+            age: 22,
+            skills: skills
+        }
+
+        const userText = JSON.stringify(user, undefined, 4);
+        localStorage.setItem('user', userText);
+
+        let firstName = localStorage.getItem('firstName');
+        let age = localStorage.getItem('age');
+        let skillss = localStorage.getItem('skills');
+
+        // Excersice 1
+        const userObj = JSON.parse(userText);
+        console.log(userObj);
+
+        //Create a student object. The student object will have first name, last name, age, skills, country, enrolled keys and values for the keys. Store the student object in your browser localStorage.
+
+        const student = {
+            firstName: "Prashant",
+            lastName: "Kumar",
+            age: 22,
+            skills: skills,
+            country: "India",
+            enrolled: true
+        }
+
+        const studentText = JSON.stringify(student, undefined, 4);
+
+        //localStorage.setItem('student', studentText);
+
+        //document.getElementById('stroage').innerHTML = localStorage.getItem('student');
+
+        const personAccount = {
+            firstName: "Prashant",
+            lastName: "Kumar",
+            incomes: [1000, 2000, 3000],
+            expenses: [500, 1000, 2000],
+            totalIncome: function() {
+                let total = 0;
+                this.incomes.forEach(income => {
+                    total += income;
+                });
+                return total;
+            },
+            totalExpense: function() {
+                let total = 0;
+                this.expenses.forEach(expense => {
+                    total += expense;
+                });
+                return total;
+            },
+            accountInfo: function() {
+                return `First Name: ${this.firstName}, Last Name: ${this.lastName}, Total Income: ${this.totalIncome()}, Total Expense: ${this.totalExpense()}, Account Balance: ${this.totalIncome() - this.totalExpense()}`;
+            },
+            addIncome: function(income) {
+                this.incomes.push(income);
+            },
+            addExpense: function(expense) {
+                this.expenses.push(expense);
+            },
+            accountBalance: function() {
+                return this.totalIncome() - this.totalExpense();
+            }
+        }
+
+        const personAccountText = JSON.stringify(personAccount, undefined, 4);
+
+        localStorage.setItem('personAccount', personAccountText);
+    </script>    
+</body>
+</html>

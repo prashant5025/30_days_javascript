@@ -359,9 +359,11 @@ const txt2ArrayLength = txt2Array.length;
 let txt2ArraySkills = [];
 for(let i =0; i < txt2ArrayLength; i++){
   txt2ArraySkills.push(txt2Array[i][1].skills.length);
+  // console.log(txt2Array[i][1].skills.length);
 }
 
 const txt2ArraySkillsMax = Math.max(...txt2ArraySkills);
+
 
 for(let i =0; i < txt2ArrayLength; i++){
   if(txt2ArraySkillsMax === txt2Array[i][1].skills.length){
