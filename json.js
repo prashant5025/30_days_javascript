@@ -220,23 +220,151 @@ const txt = `{
 }
 `;
 
-const jsonToArray = JSON.stringify(skills, undefined, 4);
-const ageJson = JSON.parse(age);
-const jsonisMarried = JSON.stringify(isMarried, undefined, 4);
-console.log(jsonToArray);
-console.log(ageJson);
+// const jsonToArray = JSON.stringify(skills, undefined, 4);
+// const ageJson = JSON.parse(age);
+// const jsonisMarried = JSON.stringify(isMarried, undefined, 4);
+// console.log(jsonToArray);
+// console.log(ageJson);
 
-console.log(jsonisMarried);
+// console.log(jsonisMarried);
 
-const JsonSTudent = JSON.stringify(student, undefined, 4);
-const JsonSTudentParse = JSON.stringify(
-  student,
-  ["firstName", "lastName", "skills"],
-  4
-);
-console.log(JsonSTudent);
-console.log(JsonSTudentParse);
-
-const uri = "https://jsonplaceholder.typicode.com/users";
+// const JsonSTudent = JSON.stringify(student, undefined, 4);
+// const JsonSTudentParse = JSON.stringify(
+//   student,
+//   ["firstName", "lastName", "skills"],
+//   4
+// );
+// console.log(JsonSTudent);
+// console.log(JsonSTudentParse);
 
 
+
+const user1 = {
+  firstName: 'Asabeneh',
+  lastName: 'Yetayeh',
+  country: 'Finland',
+  city: 'Helsinki',
+  email: 'alex@alex.com',
+  skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Python'],
+  age: 250,
+  isLoggedIn: false,
+  points: 30
+}
+
+const txt2 = `{
+  "Alex": {
+      "email": "alex@alex.com",
+      "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+      ],
+      "age": 20,
+      "isLoggedIn": false,
+      "points": 30
+  },
+  "Asab": {
+      "email": "asab@asab.com",
+      "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Redux",
+          "MongoDB",
+          "Express",
+          "React",
+          "Node"
+      ],
+      "age": 25,
+      "isLoggedIn": false,
+      "points": 50
+  },
+  "Brook": {
+      "email": "daniel@daniel.com",
+      "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React",
+          "Redux"
+      ],
+      "age": 30,
+      "isLoggedIn": true,
+      "points": 50
+  },
+  "Daniel": {
+      "email": "daniel@alex.com",
+      "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Python"
+      ],
+      "age": 20,
+      "isLoggedIn": false,
+      "points": 40
+  },
+  "John": {
+      "email": "john@john.com",
+      "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React",
+          "Redux",
+          "Node.js"
+      ],
+      "age": 20,
+      "isLoggedIn": true,
+      "points": 50
+  },
+  "Thomas": {
+      "email": "thomas@thomas.com",
+      "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React"
+      ],
+      "age": 20,
+      "isLoggedIn": false,
+      "points": 40
+  },
+  "Paul": {
+      "email": "paul@paul.com",
+      "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "MongoDB",
+          "Express",
+          "React",
+          "Node"
+      ],
+      "age": 20,
+      "isLoggedIn": false,
+      "points": 40
+  }
+}
+`
+
+const txt1 = JSON.stringify(user1, ['firstName', 'lastName', 'country', 'city', 'age'], 4);
+console.log(txt1)
+
+// Find the user who has many skills from the variable stored in txt.
+
+const txt2Parse = JSON.parse(txt2);
+const txt2Array = Object.entries(txt2Parse);
+const txt2ArrayLength = txt2Array.length;
+let txt2ArraySkills = [];
+for(let i =0; i < txt2ArrayLength; i++){
+  txt2ArraySkills.push(txt2Array[i][1].skills.length);
+}
+
+const txt2ArraySkillsMax = Math.max(...txt2ArraySkills);
+
+for(let i =0; i < txt2ArrayLength; i++){
+  if(txt2ArraySkillsMax === txt2Array[i][1].skills.length){
+    console.log(txt2Array[i][0]);
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+        
+        let getUsers = async () => {
+            let url = 'https://jsonplaceholder.typicode.com/users';
+            try{
+                let res = await fetch(url);
+                return await res.json();
+            }catch(err){
+                console.log(err);
+            }
+        }
+
+        let renderUser = async() => {
+            let users = await getUsers();
+            let html = '';
+            users.forEach(user => {
+                let htmlSegment = `
+                <div class="user">
+                    <h2>${user.name}</h2>
+                    <p>${user.email}</p>
+                    <p>${user.phone}</p>
+                    <p>${user.address.street}</p>
+                </div>
+                    
+                `;
+
+                html += htmlSegment;
+            });
+
+            let container = document.querySelector('.container');
+            container.innerHTML = html;
+        }
+
+        renderUser();
+
+    </script>
+</body>
+</html>

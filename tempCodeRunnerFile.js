@@ -1,18 +1,23 @@
-const userWithMostSkills = Object.entries(user).reduce((acc, [key, value]) => {
-//     if(acc.length < value.skills.length){
-//         acc = key
-//     }
-//     return acc
-// })
+const jsonToArray = JSON.stringify(skills, undefined, 4);
+// const ageJson = JSON.parse(age);
+// const jsonisMarried = JSON.stringify(isMarried, undefined, 4);
+// console.log(jsonToArray);
+// console.log(ageJson);
 
-// const sortData = Object.entries(user).sort((a, b) => b[1].skills.length - a[1].skills.length)
+// console.log(jsonisMarried);
 
-// sortData.map((item) => {
-//     console.log(item)
-// })
+// const JsonSTudent = JSON.stringify(student, undefined, 4);
+// const JsonSTudentParse = JSON.stringify(
+//   student,
+//   ["firstName", "lastName", "skills"],
+//   4
+// );
+// console.log(JsonSTudent);
+// console.log(JsonSTudentParse);
 
+// const options = {method: 'GET'};
 
-// const usersObj = JSON.parse(usersText,(key, value) => {
-//     let newValue = typeof value == 'string' && key != 'email' ? value.toUpperCase() : value 
-//     return newValue
-// })
+// const data = fetch('https://jsonplaceholder.typicode.com/users', options)
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
