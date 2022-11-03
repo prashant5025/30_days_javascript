@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="foo">Hey my name is Prashant singh</p>
+    
+    <script>
+        const foo = document.getElementById('foo').innerHTML;
+
+        const nodes = [...foo];
+        console.log(nodes);
+
+        const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 };
+        const arr = Array.from(arrLike);
+        console.log(arr);
+        //const baz = Array.from(foo,bar);
+
+        const person = {
+            firstName: 'Asabeneh',
+            lastName: 'Yetayeh',
+            age: 250,
+            country: 'Finland',
+            city: 'Helsinki',
+            skills: ['HTML','CSS','JavaScript','TypeScript', 'React','Node','MongoDB','Python','D3.js'],
+            isMarried: true
+          }
+
+        for(const key in person){
+            
+            console.log(key, person[key])
+        }
+
+        
+
+    </script>
+</body>
+</html>
