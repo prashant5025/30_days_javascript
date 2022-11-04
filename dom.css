@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: auto;
+}
+
+ul .list_one{
+    list-style: none;
+    padding: 30px;
+    background-color: aqua;
+    color: darkslategrey;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
