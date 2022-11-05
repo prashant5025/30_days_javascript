@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <p id="id"></p>
+    <p class="nodeList"></p>
+    <p class="nodeList"></p>
+    <p class="nodeList"></p>
+    <p class="nodeList"></p>
+    <p></p>
+
+    <script>
+        document.querySelector('#id').innerHTML = `<p>Id Selector</p>`;
+        const nodeList = document.querySelectorAll('.nodeList');
+        nodeList.forEach((node, index) => {
+            node.innerHTML = `<p>Node List Selector ${index}</p>`;
+        });
+        const text = document.querySelectorAll('p');
+        text[4].textContent = 'Text Selector';
+
+        //Set id and class attribute for all the paragraphs using different attribute setting methods
+
+        const p = document.querySelectorAll('p');
+        p.forEach((node, index) => {
+            node.setAttribute('id', `p${index}`);
+            node.setAttribute('class', `p${index}`);
+        })
+
+        //Level 2
+
+        p[6].setAttribute('class','changeStyle');
+
+
+    </script>
+</body>
+</html>
