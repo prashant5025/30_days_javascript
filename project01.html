@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="project01.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="">
+        <h1>Number Generator</h1>
+        <p><a href="https://github.com/Asabeneh/30-Days-Of-JavaScript/blob/master/22_Day_Manipulating_DOM_object/22_day_manipulating_DOM_object.md">30DaysOfJavaScript:DOM Day 2</a></p>
+        <p>Author Asbeneh Yetayeh</p>
+    </header>
+    <div class="container">
+        <ul class="number"></ul>
+    </div>
+
+    <script>
+
+        const primeNumber = (num) => {
+            let prime = true;
+            
+            for(let i = 2; i < num; i++){
+
+
+                
+                if(num % i === 0){
+                    prime = false;
+                    break;
+                }
+            }
+            return prime;
+        }
+        
+        const lists = document.getElementsByClassName('number');
+        for(let i=0; i<= 101; i++){
+            const li = document.createElement('li');
+            li.textContent = i;
+            lists[0].appendChild(li);
+
+            //if odd number make it green and if even number make it red and if prime number make it yellow
+            
+            if(i % 2 === 0){
+                li.style.backgroundColor = 'green';
+            }else{
+                li.style.backgroundColor = '#ffe135';
+            }
+
+            //if prime number make it yellow ignore 0 and 1
+
+            if(primeNumber(i) && i !== 0 && i !== 1){
+                li.style.backgroundColor = 'red';
+            }
+            
+        }
+
+
+    </script>
+</body>
+</html>
